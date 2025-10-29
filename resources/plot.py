@@ -58,12 +58,12 @@ class Plot:
             if self.data["tail"] == 'two':
                 # lower region of rejection data
                 x_lwr_reg_rej = self.data["lower_reg_rej"]
-                y_lwr_reg_rej = datum.get_normal_dist(x = x_lwr_reg_rej, mu = mean, sigma = std_dev)
+                y_lwr_reg_rej = datum.get_normal_dist(x_arr = x_lwr_reg_rej, mu = mean, sigma = std_dev)
                 floor_lwr_reg_rej = np.full(len(y_lwr_reg_rej), np.min(y_lwr_reg_rej))
                 
                 # upper region of rejection data
                 x_upr_reg_rej = self.data["upper_reg_rej"]
-                y_upr_reg_rej = datum.get_normal_dist(x = x_upr_reg_rej, mu = mean, sigma = std_dev)
+                y_upr_reg_rej = datum.get_normal_dist(x_arr = x_upr_reg_rej, mu = mean, sigma = std_dev)
                 floor_upr_reg_rej = np.full(len(y_upr_reg_rej), np.min(y_upr_reg_rej))
                 
                 # test statistic vertical line
@@ -97,7 +97,7 @@ class Plot:
             elif self.data["tail"] == 'lower':
                 # lower region of rejection data
                 x_lwr_reg_rej = self.data["lower_reg_rej"]
-                y_lwr_reg_rej = datum.get_normal_dist(x = x_lwr_reg_rej, mu = mean, sigma = std_dev)
+                y_lwr_reg_rej = datum.get_normal_dist(x_arr = x_lwr_reg_rej, mu = mean, sigma = std_dev)
                 floor_lwr_reg_rej = np.full(len(y_lwr_reg_rej), np.min(y_lwr_reg_rej))
                 
                 # test statistic vertical line
@@ -122,7 +122,7 @@ class Plot:
             else:               
                 # upper region of rejection data
                 x_upr_reg_rej = self.data["upper_reg_rej"]
-                y_upr_reg_rej = datum.get_normal_dist(x = x_upr_reg_rej, mu = mean, sigma = std_dev)
+                y_upr_reg_rej = datum.get_normal_dist(x_arr = x_upr_reg_rej, mu = mean, sigma = std_dev)
                 floor_upr_reg_rej = np.full(len(y_upr_reg_rej), np.min(y_upr_reg_rej)) # the floor for y is not always 0
                 
                 # test statistic vertical line
@@ -170,12 +170,12 @@ class Plot:
             if self.data["tail"] == 'two':
                 # lower region of rejection data
                 x_lwr_reg_rej = self.data["lower_reg_rej"]
-                y_lwr_reg_rej = datum.get_normal_dist(x = x_lwr_reg_rej, mu = mean, sigma = std_dev)
+                y_lwr_reg_rej = datum.get_normal_dist(x_arr = x_lwr_reg_rej, mu = mean, sigma = std_dev)
                 floor_lwr_reg_rej = np.full(len(y_lwr_reg_rej), np.min(y_lwr_reg_rej))
                 
                 # upper region of rejection data
                 x_upr_reg_rej = self.data["upper_reg_rej"]
-                y_upr_reg_rej = datum.get_normal_dist(x = x_upr_reg_rej, mu = mean, sigma = std_dev)
+                y_upr_reg_rej = datum.get_normal_dist(x_arr = x_upr_reg_rej, mu = mean, sigma = std_dev)
                 floor_upr_reg_rej = np.full(len(y_upr_reg_rej), np.min(y_upr_reg_rej))
                 
                 # test statistic vertical line
@@ -208,7 +208,7 @@ class Plot:
             elif self.data["tail"] == 'lower':
                 # lower region of rejection data
                 x_lwr_reg_rej = self.data["lower_reg_rej"]
-                y_lwr_reg_rej = datum.get_normal_dist(x = x_lwr_reg_rej, mu = mean, sigma = std_dev)
+                y_lwr_reg_rej = datum.get_normal_dist(x_arr = x_lwr_reg_rej, mu = mean, sigma = std_dev)
                 floor_lwr_reg_rej = np.full(len(y_lwr_reg_rej), np.min(y_lwr_reg_rej))
                 
                 # test statistic vertical line
@@ -233,7 +233,7 @@ class Plot:
             else:               
                 # upper region of rejection data
                 x_upr_reg_rej = self.data["upper_reg_rej"]
-                y_upr_reg_rej = datum.get_normal_dist(x = x_upr_reg_rej, mu = mean, sigma = std_dev)
+                y_upr_reg_rej = datum.get_normal_dist(x_arr = x_upr_reg_rej, mu = mean, sigma = std_dev)
                 floor_upr_reg_rej = np.full(len(y_upr_reg_rej), np.min(y_upr_reg_rej)) # the floor for y is not always 0
                 
                 # test statistic vertical line

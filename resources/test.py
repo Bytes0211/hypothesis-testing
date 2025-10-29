@@ -579,7 +579,7 @@ class Test:
                 #self.data['lower_reg_rej'] = self.data['x_data'][ : self.data['x_data'].index(self.datum.get_closest(lst = self.data["x_data"], x = self.critical_value))]
                 if self.tail == "upper":
                     # set the upper region of rejection 
-                    self.data['upper_reg_rej']= self.datum.get_rejection_regions(x_list = self.data["x_data"], tail = 'upper', alpha = self.alpha, observed_value = self.p, sigma = self.s1)
+                    self.data['upper_reg_rej']= self.datum.get_rejection_regions(x = self.data["x_data"], tail = 'upper', alpha = self.alpha, observed_value = self.p, sigma = self.s1)
 
                     # upper critical value upper test
                     # if the ts is greater than cv then in the 
@@ -587,7 +587,7 @@ class Test:
 
                 elif self.tail == "lower":
                     # set the lower region of rejection 
-                    self.data['lower_reg_rej'] = self.datum.get_rejection_regions(x_list = self.data["x_data"], tail = 'lower', alpha = self.alpha, observed_value = self.p, sigma = self.s1)
+                    self.data['lower_reg_rej'] = self.datum.get_rejection_regions(x = self.data["x_data"], tail = 'lower', alpha = self.alpha, observed_value = self.p, sigma = self.s1)
 
                     # upper critical value upper test
                     # if the ts is greater than cv then in the 
@@ -596,7 +596,7 @@ class Test:
                     # upper and lower critical value two tail test
                     lower_alpha = self.alpha / 2
                     # need to calculate lower first
-                    self.data['lower_reg_rej'] = self.datum.get_rejection_regions(x_list = self.data["x_data"], tail = 'lower', alpha = lower_alpha, observed_value = self.p, sigma = self.s1)
+                    self.data['lower_reg_rej'] = self.datum.get_rejection_regions(x = self.data["x_data"], tail = 'lower', alpha = lower_alpha, observed_value = self.p, sigma = self.s1)
                     
                     # use the difference between x and the lower rejection region to get the index of the upper region 
                     upper_critical_value_index =  len(self.data["x_data"]) - len(self.data['lower_reg_rej'])                     

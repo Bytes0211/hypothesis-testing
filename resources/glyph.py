@@ -28,7 +28,7 @@ class Glyph:
     
     def __init__(self, title : str = "New Title", width : int = 650, height : int = 450, x_axis_label :str = '' , 
                  show_ticks : bool = True , y_axis_label : str = '', theme : str = 'dark_minimal', x_range: Tuple = (0, 0),
-                 y_range: Tuple = (0, 0), bck_gnd_color = None, bck_gnd_alpha = None, legend_location : str = 'top_right'):
+                 y_range: Tuple = (0, 0), bck_gnd_color = '#20262B', bck_gnd_alpha = 1.0, legend_location : str = 'top_right'):
         
         self.title = title
         self.width = width
@@ -201,24 +201,32 @@ class Glyph:
                        , width : int = 1
                        , label : str = ""
                        , color : str = 'firebrick'
-                       ,alpha : float = 0.75
+                       , alpha : float = 0.75
+                       , x : list = None
+                       , mu : int | float = None
+                       , sigma : int | float = None
                     ):
         """
         create a bokeh figure.line which will be vertical based on x, mu, sigma 
          
         Parameters 
         ----------
-        x : 
         data_point : int | float
             mandatory - a data point along the x axis of the distribution which determines the location of the vertical line
         y_min  : int | float
             mandatory - the minimum point of the the vertical line 
         y_max : int | float 
-            mandatory - the maximum point of the the vertical line 
+            optional - the maximum point of the the vertical line. If not provided, will be calculated from mu and sigma
         width : int 
             mandatory - a value that represent line width
         label : str 
             mandatory - 'the string value that denotes the line
+        x : list
+            optional - x-axis data array (used with mu and sigma to calculate y_max)
+        mu : int | float
+            optional - mean of distribution (used with sigma to calculate y_max)
+        sigma : int | float
+            optional - standard deviation (used with mu to calculate y_max)
 
         Returns
         -------
@@ -231,13 +239,16 @@ class Glyph:
             new_data = data.Data()
             if y_max is not None:
                 y_point = y_max
+            elif mu is not None and sigma is not None:
+                # Calculate y_max from normal distribution at data_point
+                y_point = new_data.get_normal_dist(x_arr=data_point, mu=mu, sigma=sigma)
             else:
-                raise InvalidParamEntry('y_point value required')
-            x = [data_point, data_point]
+                raise InvalidParamEntry('Either y_max or (mu and sigma) must be provided')
+            x_line = [data_point, data_point]
             y = [y_min, y_point]
             if len(label) > 0:          
                 self.plot.line(
-                    x = x
+                    x = x_line
                     ,y = y
                     ,line_width = width 
                     ,color = color
@@ -247,7 +258,7 @@ class Glyph:
                 self.plot.legend.location = self.legend_location  
             else: 
                 self.plot.line(
-                    x = x
+                    x = x_line
                     ,y = y
                     ,line_width = width 
                     ,color = color
