@@ -51,12 +51,15 @@ activate: requirements.txt
 
 .PHONY: clean
 clean:
-	echo "Cleaning up..."; \
+	@echo "Cleaning up..."; \
 	if [ -d "build" ]; then rm -rf build; fi; \
 	if [ -d "dist" ]; then rm -rf dist; fi; \
-	if [ -d "__pycache__" ]; then rm -rf __pycache__; fi
-	if [ -d "__init__.py" ]; then rm -rf __init__.py; fi
-	if [ -d ".eggs" ]; then rm -rf .eggs; fi
+	if [ -d "__pycache__" ]; then rm -rf __pycache__; fi; \
+	if [ -d "resources/__pycache__" ]; then rm -rf resources/__pycache__; fi; \
+	if [ -d ".ipynb_checkpoints" ]; then rm -rf .ipynb_checkpoints; fi; \
+	find . -type d -name ".ipynb_checkpoints" -exec rm -rf {} + 2>/dev/null || true; \
+	if [ -d ".eggs" ]; then rm -rf .eggs; fi; \
+	echo "Clean complete"
 
 
 

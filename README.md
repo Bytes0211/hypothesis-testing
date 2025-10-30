@@ -46,7 +46,7 @@ This project provides hands-on demonstrations of hypothesis testing techniques c
 
 ---
 
-### [3. One-Tail and Two-Tail Tests for Difference of Proportions](03_one_two_tail_test_diff_props.ipynb)
+### [3. One-Tail and Two-Tail Tests for Difference of Proportions](03-one-two-tail-test-diff-props.ipynb)
 
 **Objective**: Testing differences between categorical response proportions
 
@@ -158,19 +158,23 @@ This project provides hands-on demonstrations of hypothesis testing techniques c
 hypothesis-testing/
 ├── 01-intro-to-pvalue.ipynb                    # P-value fundamentals
 ├── 02-one-two-tail-test-diff-mean.ipynb        # Testing means
-├── 03_one_two_tail_test_diff_props.ipynb       # Testing proportions
+├── 03-one-two-tail-test-diff-props.ipynb       # Testing proportions
 ├── 04-chi-squared.ipynb                         # Chi-squared tests
 ├── 05-regression-hypothesis.ipynb               # Regression testing
 ├── create_test.py                               # Test parameter configuration
-├── resources/                                   # Support modules and data
-│   ├── datum.py                                 # Data processing utilities
-│   ├── test.py                                  # Testing framework
-│   ├── glyph.py                                 # Visualization utilities
-│   ├── plot.py                                  # Plotting functions
-│   ├── cod_population.csv                       # Sample dataset
-│   └── salmon_population.csv                    # Sample dataset
+├── resources/                                   # Core hypothesis testing modules
+│   ├── datum.py                                 # Statistical calculations & data utilities
+│   ├── test.py                                  # Hypothesis testing framework
+│   ├── glyph.py                                 # Bokeh visualization wrapper
+│   ├── plot.py                                  # Plotting helper functions
+│   ├── cod_population.csv                       # Sample dataset (cod fish)
+│   └── salmon_population.csv                    # Sample dataset (salmon fish)
 ├── requirements.txt                             # Python dependencies
+├── setup.py                                     # Package installation
 ├── Makefile                                     # Build automation
+├── LICENSE                                      # MIT License
+├── CONTRIBUTING.md                              # Contribution guidelines
+├── CHANGELOG.md                                 # Version history
 └── README.md                                    # This file
 ```
 
@@ -291,11 +295,15 @@ After completing these notebooks, you will be able to:
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit issues or pull requests.
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
+- Reporting issues
+- Submitting changes
+- Code style guidelines
+- Adding new notebooks
 
 ## License
 
-This project is open source and available for educational purposes.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Author
 

@@ -1,22 +1,50 @@
-resources/__pycache__/
-SYNCED_README.md
-.vscode/
-.DS_Store
-.idea/
-*.log
-env/
-*.sqlite3
-*.pyc
+# Python
 __pycache__/
-*.pyo
-*.pyd
-*.swp
-*.swo
+*.py[cod]
+*$py.class
+*.so
+*.egg
 *.egg-info/
 dist/
 build/
-*.egg
+*.pyo
+*.pyd
+
+# Virtual Environments
+env/
+venv/
+.venv/
+ENV/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Database
+*.sqlite3
+*.db
+
+# Environment variables
 *.env
 .env.*
+
+# Project specific
+resources/__pycache__/
+SYNCED_README.md
 02-evaluation-notes.md
+utilities/
 
